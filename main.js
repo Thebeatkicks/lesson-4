@@ -8,25 +8,25 @@ Use a while loop to keep asking the user for input until they guess correctly.
 
 Provide feedback if the guess is too high or too low. */
 
- 
-   let guess = prompt("Pick a number between 1-10!"); 
-   let random = Math.floor(Math.random() * 10) + 1;
+function guessNumberGame() {
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+let guess = null;
 
-   console.log(guess);
-   console.log(random);
+while (parseInt(guess) !== randomNumber) {
+    guess = prompt("Pick a number between 1-10!"); 
+    const guessNumber = parseInt(guess);
 
-   function guessNumberGame(random, guess) {
-   
-    if (random == guess) {
-        return "Bra Gissat!"
-    }
-        else {
-            return "Försök igen!"
-        }
+    if (guessNumber < randomNumber) {
+        alert("Too low! Try again!");
+    } else if (guessNumber > randomNumber) {
+        alert("Too high! Try again");
     }
 
-   console.log(guessNumberGame(random, guess))
+}
 
+alert("Correct! The number was" + randomNumber + "!");
+
+}
 
 /* EXERCISE 2: Create an array of random numbers 
 
@@ -36,7 +36,26 @@ Inside the function, use a for loop to generate an array of random numbers betwe
 
 Return the array from the function. */
 
- 
+ function generateRandomArray(lenght) {
+    const randomArray = []
+
+    for (let i = 0; i <= lenght; i++) {
+        if (i !== lenght) {
+            randomArray.push(Math.floor(Math.random() * 100) + 1);
+        }
+        else {
+            console.log(randomArray)
+        }
+    }
+        
+
+    //lenght är hur många loopar
+    //varje loop addar en random siffra. 
+    
+    //lenght = randomNumber;
+
+    //console.log(lenght)
+ }
 
  
 
